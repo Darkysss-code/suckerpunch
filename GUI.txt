@@ -1,0 +1,85 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Скрипт на стрелу от даркиса", "Synapse")
+local Tab = Window:NewTab("Басик функшнс")
+local Section = Tab:NewSection("Мейн меню")
+Section:NewButton("Юзнуть стрелу", "соснуть стрелу", function()
+    local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = "Vitality I",
+        ["SkillTreeType"] = "Character"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = "Vitality II",
+        ["SkillTreeType"] = "Character"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = "Vitality III",
+        ["SkillTreeType"] = "Character"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = "Worthiness I",
+        ["SkillTreeType"] = "Character"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = "Worthiness II",
+        ["SkillTreeType"] = "Character"
+    }
+}
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+local args = {
+    [1] = "EndDialogue",
+    [2] = {
+        ["NPC"] = "Mysterious Arrow",
+        ["Option"] = "Option1",
+        ["Dialogue"] = "Dialogue2"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteEvent:FireServer(unpack(args))
+end)
+
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+    ----Anti Kick
+    local TPBypass
+    TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
+    local args = {...}
+    if self.Name == "Returner" and args[1] == "idklolbrah2de"  then
+          return "  ___XP DE KEY"
+      end
+    return TPBypass(self, ...)
+    end))
+    ----Tp Bypass
+
+Section:NewButton("Антон, иди проспись", "sucker", function()
+    print("Work in progress")
+end)
